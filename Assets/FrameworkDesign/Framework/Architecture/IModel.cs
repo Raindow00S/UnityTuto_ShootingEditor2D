@@ -1,5 +1,3 @@
-using FrameworkDesign.Example;
-
 namespace FrameworkDesign
 {
     public interface IModel : IBelongToArchitecture, ICanSetArchitecture, ICanGetUtility, ICanSendEvent
