@@ -1,9 +1,10 @@
 using System;
+using FrameworkDesign;
 using UnityEngine;
 
 namespace ShootingEditor2D
 {
-    public class Bullet : MonoBehaviour
+    public class Bullet : MonoBehaviour, ICanSendCommand
     {
         private Rigidbody2D mRigidbody2D;
         private float mSpeed = 10f;
@@ -22,8 +23,15 @@ namespace ShootingEditor2D
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
+                this.SendCommand<KillEnemyCommand>();
+                
                 Destroy(other.gameObject);
             }
+        }
+
+        public IArchitecture GetArchitecture()
+        {
+            return ShootingEditor2D.Interface;
         }
     }
 }
