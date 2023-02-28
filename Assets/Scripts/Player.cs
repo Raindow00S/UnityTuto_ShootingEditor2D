@@ -6,7 +6,10 @@ namespace ShootingEditor2D
     {
         private Rigidbody2D mRigidbody2D;
         private Trigger2DCheck mGroundCheck;
+        private Gun mGun;
+        
         private float mSpeed = 7f;  // todo 设置读写权限
+        private float mJumpForce = 5f;
 
         private bool mJumpPressed;
         
@@ -14,6 +17,7 @@ namespace ShootingEditor2D
         {
             mRigidbody2D = GetComponent<Rigidbody2D>();
             mGroundCheck = transform.Find("GroundCheck").GetComponent<Trigger2DCheck>();
+            mGun = transform.Find("Gun").GetComponent<Gun>();
         }
 
         private void FixedUpdate()  // tip 在update里移动可能会穿透
@@ -26,7 +30,7 @@ namespace ShootingEditor2D
             var grounded = mGroundCheck.Triggered;
             if (mJumpPressed && grounded)
             {
-                mRigidbody2D.velocity = new Vector2(mRigidbody2D.velocity.x, mSpeed);
+                mRigidbody2D.velocity = new Vector2(mRigidbody2D.velocity.x, mJumpForce);
             }
 
             mJumpPressed = false;
@@ -34,9 +38,10 @@ namespace ShootingEditor2D
 
         private void Update()   // tip 输入在update里处理
         {
-            if (Input.GetKeyDown(KeyCode.K))
+            if (Input.GetKeyDown(KeyCode.Space))
                 mJumpPressed = true;
-
+            if(Input.GetKeyDown(KeyCode.F))
+                mGun.Shoot();
         }
     }   
 }
