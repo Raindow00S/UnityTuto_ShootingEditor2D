@@ -40,7 +40,7 @@ namespace ShootingEditor2D
         {
             if (Input.GetKeyDown(KeyCode.Space))
                 mJumpPressed = true;
-            if(Input.GetKeyDown(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.S))
                 mGun.Shoot();
         }
     }   
