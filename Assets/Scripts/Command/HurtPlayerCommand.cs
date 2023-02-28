@@ -2,6 +2,9 @@ using FrameworkDesign;
 
 namespace ShootingEditor2D
 {
+    /// <summary>
+    /// 玩家受击
+    /// </summary>
     public class HurtPlayerCommand : AbstractCommand
     {
         private readonly int mHurt;

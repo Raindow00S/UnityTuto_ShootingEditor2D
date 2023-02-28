@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace ShootingEditor2D
 {
+    /// <summary>
+    /// 能够对玩家造成碰撞伤害的
+    /// </summary>
     public class AttackPlayer : MonoBehaviour, IController
     {
         public int Hurt = 1;

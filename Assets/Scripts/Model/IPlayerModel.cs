@@ -2,6 +2,9 @@ using FrameworkDesign;
 
 namespace ShootingEditor2D
 {
+    /// <summary>
+    /// 玩家数据模型
+    /// </summary>
     public interface IPlayerModel : IModel
     {
         BindableProperty<int> HP { get; }

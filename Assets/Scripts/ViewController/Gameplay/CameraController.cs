@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace ShootingEditor2D
 {
+    /// <summary>
+    /// 简易相机跟随
+    /// </summary>
     public class CameraController : MonoBehaviour
     {
         private Transform mPlayerTrans;

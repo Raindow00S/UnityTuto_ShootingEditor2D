@@ -4,10 +4,14 @@ using UnityEngine;
 
 namespace ShootingEditor2D
 {
+    /// <summary>
+    /// 关卡文件解析器
+    /// </summary>
     public class LevelPlayer : MonoBehaviour
     {
         public TextAsset LevelFile;
 
+        // 解析关卡文件，生成对应prefab
         private void Start()
         {
             var xml = LevelFile.text;

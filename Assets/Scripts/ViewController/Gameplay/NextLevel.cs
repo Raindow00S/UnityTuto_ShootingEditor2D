@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// 场景切换点
+/// </summary>
 public class NextLevel : MonoBehaviour
 {
     public string LevelName;

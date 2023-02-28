@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace ShootingEditor2D
 {
+    /// <summary>
+    /// 通用2D Trigger
+    /// </summary>
     public class Trigger2DCheck : MonoBehaviour
     {
         public LayerMask TargetLayers;  // 一个mask是对多个layer的指示
