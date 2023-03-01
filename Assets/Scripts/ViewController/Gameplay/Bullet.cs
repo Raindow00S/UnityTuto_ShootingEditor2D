@@ -12,6 +12,9 @@ namespace ShootingEditor2D
         private void Awake()
         {
             mRigidbody2D = GetComponent<Rigidbody2D>();
+            
+            // 延时销毁
+            Destroy(this, 5f);
         }
 
         private void Start()

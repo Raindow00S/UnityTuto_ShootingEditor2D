@@ -28,7 +28,8 @@ namespace ShootingEditor2D
             
             var cameraPos = transform.position;
             var playerPos = mPlayerTrans.position;
-            cameraPos.x = playerPos.x + 3;
+            var isFacingRight = Mathf.Sign(mPlayerTrans.transform.localScale.x);
+            cameraPos.x = playerPos.x + 3 * isFacingRight;
             cameraPos.y = playerPos.y + 2;
 
             transform.position = cameraPos;

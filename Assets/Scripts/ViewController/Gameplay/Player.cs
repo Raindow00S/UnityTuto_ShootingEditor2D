@@ -24,6 +24,15 @@ namespace ShootingEditor2D
         {
             // 水平移动
             var horizontalInput = Input.GetAxis("Horizontal");
+            
+            // 转向
+            if (horizontalInput * transform.localScale.x < 0)
+            {
+                var tmpScale = transform.localScale;
+                tmpScale.x *= (-1);
+                transform.localScale = tmpScale;
+            }
+            
             mRigidbody2D.velocity = new Vector2(horizontalInput * mSpeed, mRigidbody2D.velocity.y);
 
             // 跳跃（防止空中连跳）
