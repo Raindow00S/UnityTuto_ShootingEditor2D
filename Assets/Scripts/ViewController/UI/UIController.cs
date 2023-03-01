@@ -9,11 +9,13 @@ namespace ShootingEditor2D
     {
         private IPlayerModel mPlayerModel;
         private IStatSystem mStatSystem;
+        private IGunSystem mGunSystem;
 
         private void Awake()
         {
             mPlayerModel = this.GetModel<IPlayerModel>();
             mStatSystem = this.GetSystem<IStatSystem>();
+            mGunSystem = this.GetSystem<IGunSystem>();
         }
 
         // tip 懒加载，第一次调用OnGUI时才初始化GUIStyle，不能在生命周期的其他时候初始化（？）
@@ -32,11 +34,20 @@ namespace ShootingEditor2D
                 mLabelStyle.Value);
             GUI.Label(new Rect(Screen.width - 10 - 300, 10, 300, 100), $"击杀：{mStatSystem.KillCount.Value}",
                 mLabelStyle.Value);
+            GUI.Label(new Rect(Screen.width - 10 - 300, 60, 300, 100), $"子弹：{mGunSystem.CrtGun.BulletCount.Value}",
+                mLabelStyle.Value);
         }
 
         public IArchitecture GetArchitecture()
         {
             return ShootingEditor2D.Interface;
+        }
+
+        private void OnDestroy()
+        {
+            mPlayerModel = null;
+            mGunSystem = null;
+            mStatSystem = null;
         }
     }
 }

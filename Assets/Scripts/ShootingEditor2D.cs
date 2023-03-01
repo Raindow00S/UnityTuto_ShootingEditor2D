@@ -8,6 +8,7 @@ namespace ShootingEditor2D
         protected override void Init()
         {
             RegisterSystem<IStatSystem>(new StatSystem());
+            RegisterSystem<IGunSystem>(new GunSystem());
             RegisterModel<IPlayerModel>(new PlayerModel());
         }
     }
