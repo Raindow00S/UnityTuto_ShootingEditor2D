@@ -17,7 +17,7 @@ namespace ShootingEditor2D
 
         public void Shoot()
         {
-            if (mGunInfo.BulletCount.Value > 0)
+            if (mGunInfo.BulletCountInGun.Value > 0)
             {
                 var bullet = Instantiate(mBullet, mBullet.transform.position, mBullet.transform.rotation);
                 bullet.transform.localScale = mBullet.transform.lossyScale; // 全局缩放值

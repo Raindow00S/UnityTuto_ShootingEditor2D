@@ -16,7 +16,7 @@ namespace ShootingEditor2D
             var randomIndex = Random.Range(0, 100);
             if (randomIndex < 80)
             {
-                this.GetSystem<IGunSystem>().CrtGun.BulletCount.Value += Random.Range(1, 4);
+                this.GetSystem<IGunSystem>().CrtGun.BulletCountInGun.Value += Random.Range(1, 4);
             }
         }
     }

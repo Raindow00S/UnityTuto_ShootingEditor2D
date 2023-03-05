@@ -3,7 +3,7 @@ using System;
 namespace FrameworkDesign
 {
     // T需要可比较
-    public class BindableProperty<T> where T : IEquatable<T>
+    public class BindableProperty<T>
     {
         private T mValue = default(T);
 
@@ -42,7 +42,7 @@ namespace FrameworkDesign
         }
     }
 
-    public class BindablePropertyUnRegister<T> : IUnRegister where T : IEquatable<T>
+    public class BindablePropertyUnRegister<T> : IUnRegister
     {
         public BindableProperty<T> BindableProperty { get; set; }
         public Action<T> OnValueChanged { get; set; }
