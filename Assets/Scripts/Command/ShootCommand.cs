@@ -8,7 +8,9 @@ namespace ShootingEditor2D
         
         protected override void OnExecute()
         {
-            this.GetSystem<IGunSystem>().CrtGun.BulletCountInGun.Value--;
+            var gunSystem = this.GetSystem<IGunSystem>();
+            gunSystem.CrtGun.BulletCountInGun.Value--;
+            gunSystem.CrtGun.GunState.Value = GunState.Shooting;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace ShootingEditor2D
         public BindableProperty<int> BulletCountInGun;
         public BindableProperty<string> Name;
         public BindableProperty<GunState> GunState;
-        public BindableProperty<int> BulletCountoUTGun;
+        public BindableProperty<int> BulletCountOutGun;
     }
 
     public enum GunState

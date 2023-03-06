@@ -34,7 +34,13 @@ namespace ShootingEditor2D
                 mLabelStyle.Value);
             GUI.Label(new Rect(Screen.width - 10 - 300, 10, 300, 100), $"击杀：{mStatSystem.KillCount.Value}",
                 mLabelStyle.Value);
-            GUI.Label(new Rect(Screen.width - 10 - 300, 60, 300, 100), $"子弹：{mGunSystem.CrtGun.BulletCountInGun.Value}",
+            GUI.Label(new Rect(Screen.width - 10 - 300, 60, 300, 100), $"枪内子弹：{mGunSystem.CrtGun.BulletCountInGun.Value}",
+                mLabelStyle.Value);
+            GUI.Label(new Rect(Screen.width - 10 - 300, 110, 300, 100), $"枪外子弹：{mGunSystem.CrtGun.BulletCountOutGun.Value}",
+                mLabelStyle.Value);
+            GUI.Label(new Rect(Screen.width - 10 - 300, 160, 300, 100), $"枪状态：{mGunSystem.CrtGun.GunState.Value}",
+                mLabelStyle.Value);
+            GUI.Label(new Rect(Screen.width - 10 - 300, 210, 300, 100), $"枪名字：{mGunSystem.CrtGun.Name.Value}",
                 mLabelStyle.Value);
         }
 
